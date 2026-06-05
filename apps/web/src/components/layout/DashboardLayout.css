@@ -47,6 +47,12 @@
   letter-spacing: -0.02em;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .btn-logout {
   display: flex;
   align-items: center;

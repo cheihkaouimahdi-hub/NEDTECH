@@ -8,10 +8,12 @@ import type { LoginCredentials } from '../types';
 
 export function useAuth() {
   const [loading, setLoading] = useState(false);
+  const [loginError, setLoginError] = useState(false);
   const navigate = useNavigate();
 
   const login = async (credentials: LoginCredentials) => {
     setLoading(true);
+    setLoginError(false);
     try {
       const data = await authApi.login(credentials);
       storage.set(STORAGE_KEYS.TOKEN, data.access_token);
@@ -19,6 +21,8 @@ export function useAuth() {
       navigate('/home');
     } catch {
       toast.error('Invalid email or password');
+      setLoginError(true);
+      setTimeout(() => setLoginError(false), 2000);
     } finally {
       setLoading(false);
     }
@@ -29,5 +33,5 @@ export function useAuth() {
     navigate('/login');
   };
 
-  return { login, logout, loading };
+  return { login, logout, loading, loginError };
 }

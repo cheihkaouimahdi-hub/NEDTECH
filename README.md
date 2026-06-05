@@ -1,6 +1,6 @@
-# Employee Hub — Dashboard de Gestion des Employés
+# NEDTECK — Dashboard de Gestion des Employés
 
-Bienvenue dans le projet **Employee Hub**, une application web moderne, performante et sécurisée conçue pour simplifier la gestion des collaborateurs au sein d'une entreprise.
+Bienvenue dans le projet **NEDTECK**, une application web moderne, performante et sécurisée conçue pour simplifier la gestion des collaborateurs au sein d'une entreprise.
 
 Cette application est structurée sous forme de monorepo séparant distinctement le Frontend (application client React) et le Backend (API NestJS).
 
@@ -8,7 +8,7 @@ Cette application est structurée sous forme de monorepo séparant distinctement
 
 ## 🚀 1. Description du Projet
 
-L'application **Employee Hub** permet aux administrateurs de se connecter de façon sécurisée et de gérer le cycle de vie des employés à travers les fonctionnalités clés suivantes :
+L'application **NEDTECK** permet aux administrateurs de se connecter de façon sécurisée et de gérer le cycle de vie des employés à travers les fonctionnalités clés suivantes :
 - **Authentification Sécurisée (JWT)** : Connexion avec validation rigoureuse des formulaires, stockage sécurisé du jeton d'accès, et gestion des redirections automatiques pour les routes protégées.
 - **Tableau de Bord Dynamique** : Visualisation globale des employés sous forme de tableau paginé avec badges de statut colorés.
 - **Filtres Avancés & Recherche** : Barre de recherche dynamique sur les champs Nom, Prénom et Email avec débogage des saisies (Debounce de 300ms) et filtre par département.
