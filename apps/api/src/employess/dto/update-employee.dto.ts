@@ -29,4 +29,4 @@ export class UpdateEmployeeDto {
   @IsOptional()
   @IsString()
   status?: string;
-}
+}

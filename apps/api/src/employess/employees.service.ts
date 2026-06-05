@@ -1,4 +1,8 @@
-import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
 import { UpdateEmployeeDto } from './dto/update-employee.dto';
@@ -7,7 +11,12 @@ import { UpdateEmployeeDto } from './dto/update-employee.dto';
 export class EmployeesService {
   constructor(private prisma: PrismaService) {}
 
-  async findAll(page: number, limit: number, search: string, department: string) {
+  async findAll(
+    page: number,
+    limit: number,
+    search: string,
+    department: string,
+  ) {
     const skip = (page - 1) * limit;
 
     const where: any = {};
@@ -27,7 +36,12 @@ export class EmployeesService {
     }
 
     const [employees, total] = await this.prisma.$transaction([
-      this.prisma.employee.findMany({ where, skip, take: limit, orderBy: { createdAt: 'desc' } }),
+      this.prisma.employee.findMany({
+        where,
+        skip,
+        take: limit,
+        orderBy: { createdAt: 'desc' },
+      }),
       this.prisma.employee.count({ where }),
     ]);
 
@@ -41,7 +55,9 @@ export class EmployeesService {
   }
 
   async create(dto: CreateEmployeeDto) {
-    const exists = await this.prisma.employee.findUnique({ where: { email: dto.email } });
+    const exists = await this.prisma.employee.findUnique({
+      where: { email: dto.email },
+    });
     if (exists) throw new ConflictException('Email already exists');
 
     return this.prisma.employee.create({ data: dto });
