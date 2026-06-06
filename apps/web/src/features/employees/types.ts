@@ -10,4 +10,4 @@ export interface CreateEmployeePayload {
   status: string;
 }
 
-export interface UpdateEmployeePayload extends Partial<CreateEmployeePayload> {}
+export interface UpdateEmployeePayload extends Partial<CreateEmployeePayload> { }

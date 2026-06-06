@@ -183,9 +183,8 @@ export function EmployeeTable({
               ) : (
                 <button
                   key={item}
-                  className={`pagination-btn pagination-num ${
-                    item === currentPage ? 'active' : ''
-                  }`}
+                  className={`pagination-btn pagination-num ${item === currentPage ? 'active' : ''
+                    }`}
                   onClick={() => onPageChange(item)}
                 >
                   {item}

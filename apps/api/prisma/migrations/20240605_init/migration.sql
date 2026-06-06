@@ -1,7 +1,7 @@
-﻿-- CreateSchema
+﻿
 CREATE SCHEMA IF NOT EXISTS "public";
 
--- CreateEnum
+
 CREATE TYPE "Role" AS ENUM ('EMPLOYEE', 'ADMIN');
 
 -- CreateTable
